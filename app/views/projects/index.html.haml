@@ -1,0 +1,15 @@
+= link_to(new_project_path, class: 'btn', rel: 'tooltip', title: t('tooltips.new')) do
+  %i.icon-plus
+
+
+%table.table.table-striped.table-bordered.table-condensed
+  %tr
+    %th Name
+    %th Description
+  - @projects.each do |project|
+    %tr
+      %td= project.name
+      %td= project.description
+      %td= link_to 'Göster', project, :class => 'btn btn-primary'
+      %td= link_to 'Düzenle', edit_project_path(project), :class => 'btn btn-info'
+      %td= link_to 'Sil', project, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Silmek istiyor musun?' }
