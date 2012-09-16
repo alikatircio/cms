@@ -1,6 +1,8 @@
 Cms::Application.routes.draw do
   root :to => 'projects#index'
-  resources :projects
+  resources :projects do
+    resource :pages
+  end
 
   devise_for :admins
 

@@ -1,0 +1,9 @@
+= simple_form_for(@page, :html => { :class => 'form-inline validate' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :content
+
+  .form-actions
+    = f.button :submit
