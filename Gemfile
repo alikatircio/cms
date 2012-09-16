@@ -5,6 +5,7 @@ gem "haml-rails"
 gem "twitter-bootstrap-rails", :group => :assets
 gem 'simple_form'
 gem 'devise'
+gem 'responders'
 
 
 # Bundle edge Rails instead:
