@@ -1,7 +1,7 @@
 Cms::Application.routes.draw do
   root :to => 'projects#index'
   resources :projects do
-    resource :pages
+    resources :pages
   end
 
   devise_for :admins

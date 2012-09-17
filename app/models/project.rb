@@ -4,4 +4,5 @@ class Project < ActiveRecord::Base
   validates :name, :uniqueness => true
 
   has_many :pages
+  belongs_to :user
 end

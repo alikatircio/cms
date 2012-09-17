@@ -1,4 +1,5 @@
-= link_to( new_project_pages_path, class: 'btn', rel: 'tooltip', title: t('tooltips.new')) do
+# encoding: utf-8
+= link_to( new_project_pages_path(@project, @page), class: 'btn', rel: 'tooltip', title: t('tooltips.new')) do
   %i.icon-plus
 -# will_paginate @pages, previous_label: h("<"), next_label: h(">")
 - if @pages.previous_page
@@ -11,10 +12,10 @@ Sayfa #{@pages.current_page} - #{@pages.total_pages}
   %tr
     %th Name
     %th Content
-  - @projects.each do |page|
+  - @project.pages.each do |page|
     %tr
       %td= page.name
       %td= page.content
-      %td= link_to 'Göster', project_pages, :class => 'btn btn-primary'
-      %td= link_to 'Düzenle', edit_project_pages_path(page), :class => 'btn btn-info'
-      %td= link_to 'Sil', project_pages, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Silmek istiyor musun?' }
+      %td= link_to 'Göster', project_page_path(@project, page), :class => 'btn btn-primary'
+      %td= link_to 'Düzenle', edit_project_pages_path(@project, page), :class => 'btn btn-info'
+      %td= link_to 'Sil', [@project, page], :class => 'btn btn-danger', method: :delete, data: { confirm: 'Silmek istiyor musun?' }

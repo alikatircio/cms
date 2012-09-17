@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
+    #@project.user_id = current_user.id
     @project.save
     respond_with(@projects)
   end
