@@ -6,6 +6,7 @@ gem "twitter-bootstrap-rails", :group => :assets
 gem 'simple_form'
 gem 'devise'
 gem 'responders'
+gem 'will_paginate', '~> 3.0'
 
 
 # Bundle edge Rails instead:

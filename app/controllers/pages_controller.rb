@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @pages = Page.all
+    @pages = Page.order("name").page(params[:page]).per_page(5)
     respond_with(@pages)
   end
 

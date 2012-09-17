@@ -1,6 +1,11 @@
 = link_to( new_project_pages_path, class: 'btn', rel: 'tooltip', title: t('tooltips.new')) do
   %i.icon-plus
-
+-# will_paginate @pages, previous_label: h("<"), next_label: h(">")
+- if @pages.previous_page
+  = link_to "< Önceki", params.merge(:page => @pages.previous_page)
+Sayfa #{@pages.current_page} - #{@pages.total_pages}
+- if @pages.next_page
+  = link_to "Sonraki >", params.merge(:page => @pages.next_page)
 
 %table.table.table-striped.table-bordered.table-condensed
   %tr
